@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body {
+  background-color: #202632;
+  color: white;
+}
+main{
+  background-color: #313a49;
+  text-align: center;
+  min-width: 200px;
+  max-width: 600px;
+  width: 85%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Utilizei o "transform" para garantir que a "main" fique alinhada no centro da tela*/
+  padding: 20px;
+  border-radius: 10px;
+}
+:root{ /* Usei variáveis para deixar o código mais limpo e evitar ter trabalho no futuro de modificar uma propriedade por vez*/ 
+  --sombraCor: #53ffac;
+}
+
+.dice{
+  transition: filter .3s ease-out;
+  background-color: var(--sombraCor); /* consumi a variável que declarei*/
+  border-radius: 50%;
+  width: 5vw; /* Usei a forma de medida vw para ajudar com a responsividade da página*/
+  height: 5vw;
+  padding: 3vw;
+  cursor: pointer; /* Modifiquei o modo do cursor para que a div pareça ser clicável */
+  user-select: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div#divider{
+  margin: 30px auto;
+  max-width: 500px;
+  user-select: none;
+}
+.dice:hover{
+  filter: drop-shadow(0 0 1em var(--sombraCor));
+}
+.dice:active{
+  transition: filter .01s ease-out;
+  filter: drop-shadow(0 0 2em var(--sombraCor));
+}
+p#advice{
+  color: #4fe69f;
+  font-size: 12px;
+  font-family: monospace;
+  font-weight: bold;
+}
+h3#dica{
+  color: #cfe3ea;
+  font-family: Manrope;
+  font-weight: 800;
+}
+@media(min-width: 450px){ /* Ajustei a responsividade para dispositivos menores como celular e tablet*/
+  .dice{
+    width: 3vw;
+    height: 3vw;
+    padding: 2vw;
+  }
+}
+@media(min-width: 800px){ /* Ajustei a responsividade para dispositivos maiores como pc ou tv*/
+.dice{
+  width: 2vw;
+  height: 2vw;
+  padding: 1vw;
+}
+}
